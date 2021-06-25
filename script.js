@@ -28,7 +28,10 @@ function setup() {
 function draw() {
   if(isModelReady === true) {
     image(video, 0, 0);
-    de
+    detector.detect(canvas, gotResults); 
+    for(let i = 0; i < detections.length; i++) {
+      drawLabel(detections[i]);
+    }
   }
 }
 
